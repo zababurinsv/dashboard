@@ -1,0 +1,161 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <title>Dashboard</title>
+    <meta http-equiv="content-type" content="text/html; charset=utf-8" />
+    <script src="./static/html/components/component_modules/cell-index/jason.js" async></script>
+    <script src="./static/html/components/component_modules/cell-index/dragula.js" async></script>
+    <script src="./static/html/components/component_modules/cell-index/st.js" async></script>
+    <link rel="preload" href="./static/html/components/component_modules/cell-index/jason.css" as="style" onload="this.rel='stylesheet'">
+</head>
+<body>
+<section id="dashboard">
+    <div>
+        <cell-index slot="cell-dex"></cell-index>
+        <cell-index slot="cell-vk"></cell-index>
+        <cell-index slot="cell-stackexchange"></cell-index>
+        <cell-index slot="cell-authorization"></cell-index>
+        <cell-index slot="cell-jwt"></cell-index>
+        <cell-index slot="cell-mongo"></cell-index>
+        <cell-index slot="cell-radio"></cell-index>
+        <cell-index slot="cell-store"></cell-index>
+        <cell-index slot="cell-ton"></cell-index>
+        <cell-index slot="cell-telegram"></cell-index>
+        <cell-index slot="cell-graph"></cell-index>
+        <cell-index slot="cell-account"></cell-index>
+        <cell-index slot="cell-feed"></cell-index>
+    </div>
+    <div id="info">
+        Console
+        <div class="container">
+            <input type="button" value="erase" id="erase">
+            <input type="button" value="help" id="help">
+        </div>
+    </div>
+    <div id="console"></div>
+</section>
+</body>
+<!--<script type="module" src="/static/html/components/cell-index/cell-index.mjs"></script>-->
+<script type="module">
+
+    // SE.init({
+    //     clientId: '16891',
+    //     key:'D*FoLFAUI68xi01Lx6ztTw((',
+    //     channelUrl: 'https://ws-authorization.herokuapp.com/auth.mjs',
+    //     complete: (data)=>{
+    //
+    //         console.log('~~~~~~~~~~~~~', data)
+    //
+    //     },
+    //     networkUsers: true
+    // });
+    // let shadow = document.querySelector('#authtorization')
+    // console.log('~~~~~~~~~~~~~~~', shadow, SE)
+    // shadow.addEventListener('click',async ()=>{
+    //
+    //     SE.authenticate({
+    //         success: function(data) { alert('Я получил доступ!'); }, // Приложение авторизовало пользователя
+    //         error: function(data) {  alert('Я не получил доступ :('); }, // Приложение не авторизовало пользователя
+    //         scope: ['read_inbox'],
+    //         networkUsers: true
+    //     });
+    //
+    // })
+</script>
+<style>
+    p{
+        margin: 0;
+    }
+    div#name, div#address, div#account, div#runmethod {
+        display: flex;
+        flex-direction: column;
+        justify-content: center;
+        box-shadow: inset 0vw 0vw 1vw 0px #7694f4;
+        padding: 2vw;
+        box-sizing: border-box;
+        text-align: center;
+    }
+    input.help,  input.time,  input.last,  input#erase, input#help{
+        cursor: pointer;
+    }
+    input.name, input.address, input.account, input.help, input.runmethod,  input.time,  input.last,input#help,  input#erase{
+        align-self: center;
+        display: flex;
+        align-self: center;
+        box-sizing: border-box;
+        padding: 1vw;
+        flex-direction: row;
+        width: 37vw;
+        border: .1vw solid #acb2b5;
+        border-radius: 0.5vw;
+        margin: auto;
+        margin: 1vw;
+        outline: none;
+    //height: 5vw;
+    @include fonts(8);
+        font-family: Roboto,serif;
+        color: #acb2b5;
+        background: transparent;
+    }
+    label.name, label.address, label.account, div.container, label.runmethod{
+        display: flex;
+        align-self: center;
+        box-sizing: border-box;
+        padding: 1vw;
+        flex-direction: row;
+        width: 37vw;
+        border: .1vw solid #acb2b5;
+        border-radius: 0.5vw;
+        margin: auto;
+        margin-top: 1vw;
+        margin-bottom: 1vw;
+        outline: none;
+        justify-content: center;
+    //height: 5vw;
+    @include fonts(8);
+        font-family: Roboto,serif;
+        color: #acb2b5;
+        background: transparent;
+        cursor: pointer;
+    }
+    div#info{
+        color: red;
+        box-shadow: inset 0vw 0vw 1vw 0px #7694f4;
+        padding: 2vw;
+        box-sizing: border-box;
+        text-align: center;
+        left: 5%;
+        width: 100%;
+        background: white;
+        margin: auto;
+        margin-bottom: 1vw;
+        display: flex;
+        justify-content: center;
+        flex-direction: column;
+    }
+    div{
+        word-wrap: break-word;
+        white-space: normal;
+    }
+    div#console{
+        color: #348a00;
+        position: relative;
+        overflow: scroll;
+        height: 50vw;
+        box-sizing: border-box;
+        text-align: left;
+        border-radius: .4vw;
+        box-shadow: inset 0vw 0vw 1vw 0px #7694f4;
+        font-family: Roboto,serif;
+        flex-direction: column;
+        justify-content: center;
+        align-items: center;
+        padding: 2vw;
+        white-space: normal;
+    }
+    div.container{
+        width: 100%;
+        margin: 1vw;
+    }
+</style>
+</html>
