@@ -10,7 +10,12 @@
 </head>
 <body>
 <section id="dashboard">
-    <div>
+    <header name="varan-header">
+        <hr>
+        Dashboard
+        <hr>
+    </header>
+    <div id="components">
         <cell-index slot="cell-dex"></cell-index>
         <cell-index slot="cell-vk"></cell-index>
         <cell-index slot="cell-stackexchange"></cell-index>
@@ -35,34 +40,35 @@
     <div id="console"></div>
 </section>
 </body>
-<!--<script type="module" src="/static/html/components/cell-index/cell-index.mjs"></script>-->
+<script type="module" src="/static/html/components/cell-index/cell-index.mjs"></script>
+<script type="module" src="/static/html/components/varan-header/varan-header.mjs"></script>
+
 <script type="module">
 
-    // SE.init({
-    //     clientId: '16891',
-    //     key:'D*FoLFAUI68xi01Lx6ztTw((',
-    //     channelUrl: 'https://ws-authorization.herokuapp.com/auth.mjs',
-    //     complete: (data)=>{
-    //
-    //         console.log('~~~~~~~~~~~~~', data)
-    //
-    //     },
-    //     networkUsers: true
-    // });
-    // let shadow = document.querySelector('#authtorization')
-    // console.log('~~~~~~~~~~~~~~~', shadow, SE)
-    // shadow.addEventListener('click',async ()=>{
-    //
-    //     SE.authenticate({
-    //         success: function(data) { alert('Я получил доступ!'); }, // Приложение авторизовало пользователя
-    //         error: function(data) {  alert('Я не получил доступ :('); }, // Приложение не авторизовало пользователя
-    //         scope: ['read_inbox'],
-    //         networkUsers: true
-    //     });
-    //
-    // })
 </script>
 <style>
+    div#components{
+        display: flex;
+        flex-direction: row;
+        height: 100vw;
+        flex-wrap: wrap;
+        margin: auto;
+        justify-content: space-evenly;
+    }
+    header{
+        text-align: center;
+        font-size: 5vw;
+    }
+    cell-index{
+        width: 24%;
+        box-shadow: inset 0vw 0vw 1vw 0px #7694f4;
+        box-sizing: border-box;
+        border: .1vw solid #acb2b5;
+        margin: 0.3vw;
+    }
+    varan-header{
+        width: 100%;
+    }
     p{
         margin: 0;
     }
@@ -71,8 +77,9 @@
         flex-direction: column;
         justify-content: center;
         box-shadow: inset 0vw 0vw 1vw 0px #7694f4;
-        padding: 2vw;
         box-sizing: border-box;
+        padding: 2vw;
+
         text-align: center;
     }
     input.help,  input.time,  input.last,  input#erase, input#help{
