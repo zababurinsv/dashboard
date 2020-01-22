@@ -16,19 +16,10 @@
         <hr>
     </header>
     <div id="components">
-        <cell-index slot="cell-dex"></cell-index>
-        <cell-index slot="cell-vk"></cell-index>
-        <cell-index slot="cell-stackexchange"></cell-index>
-        <cell-index slot="cell-authorization"></cell-index>
-        <cell-index slot="cell-jwt"></cell-index>
-        <cell-index slot="cell-mongo"></cell-index>
-        <cell-index slot="cell-radio"></cell-index>
-        <cell-index slot="cell-store"></cell-index>
-        <cell-index slot="cell-ton"></cell-index>
+        <cell-index slot="cell-auth-vk"></cell-index>
+        <cell-index slot="cell-auth-stack"></cell-index>
+        <cell-index slot="cell-auth-jwt"></cell-index>
         <cell-index slot="cell-telegram"></cell-index>
-        <cell-index slot="cell-graph"></cell-index>
-        <cell-index slot="cell-account"></cell-index>
-        <cell-index slot="cell-feed"></cell-index>
     </div>
     <div id="info">
         Console
@@ -37,30 +28,35 @@
             <input type="button" value="help" id="help">
         </div>
     </div>
-    <div id="console"></div>
+    <ul id="console"></ul>
 </section>
 </body>
 <script type="module" src="/static/html/components/cell-index/cell-index.mjs"></script>
-<script type="module" src="/static/html/components/varan-header/varan-header.mjs"></script>
+<!--<script type="module" src="/static/html/components/varan-header/varan-header.mjs"></script>-->
 
 <script type="module">
 
 </script>
 <style>
+    :root {
+        --width: 30vw;
+    }
     div#components{
         display: flex;
         flex-direction: row;
-        height: 100vw;
+        height: 50vw;
         flex-wrap: wrap;
         margin: auto;
         justify-content: space-evenly;
+        align-items: center;
     }
     header{
         text-align: center;
         font-size: 5vw;
     }
     cell-index{
-        width: 24%;
+        width: var(--width);
+        height: calc(var(--width) / 1.333);
         box-shadow: inset 0vw 0vw 1vw 0px #7694f4;
         box-sizing: border-box;
         border: .1vw solid #acb2b5;
@@ -144,7 +140,7 @@
         word-wrap: break-word;
         white-space: normal;
     }
-    div#console{
+    ul#console{
         color: #348a00;
         position: relative;
         overflow: scroll;
@@ -159,6 +155,8 @@
         align-items: center;
         padding: 2vw;
         white-space: normal;
+        overflow-x: hidden;
+        overflow-y: hidden;
     }
     div.container{
         width: 100%;
