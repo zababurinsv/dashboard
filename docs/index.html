@@ -13,13 +13,55 @@
     <header name="varan-header">
         <hr>
         Dashboard
+        localhost:5000
         <hr>
     </header>
     <div id="components">
-        <cell-index slot="cell-auth-vk"></cell-index>
-        <cell-index slot="cell-auth-stack"></cell-index>
-        <cell-index slot="cell-auth-jwt"></cell-index>
-        <cell-index slot="cell-telegram"></cell-index>
+        <cell-index slot="cell-auth-stack">
+            <div>
+                <p><a href="http://localhost:4994">component</a></p>
+            </div>
+        </cell-index>
+        <cell-index slot="cell-auth-atlassian">
+            <div>
+                <p><a href="http://localhost:5004">component</a></p>
+            </div>
+        </cell-index>
+        <cell-index slot="cell-auth-github">
+            <div>
+                <p><a href="http://localhost:5006">component</a></p>
+            </div>
+        </cell-index>
+        <cell-index slot="cell-auth-vk">
+            <div>
+                <p><a href="http://localhost:5008">component</a></p>
+            </div>
+        </cell-index>
+            <cell-index slot="cell-auth-facebook">
+                <div>
+                    <p><a href="http://localhost:5009">component</a></p>
+                </div>
+            </cell-index>
+        <cell-index slot="cell-auth-twitter">
+            <div>
+                <p><a href="http://localhost:4731">component</a></p>
+            </div>
+        </cell-index>
+        <cell-index slot="cell-auth-waves">
+            <div>
+                <p><a href="http://localhost:5009">component</a></p>
+            </div>
+        </cell-index>
+        <cell-index slot="cell-auth-ledger">
+            <div>
+                <p><a href="http://localhost:4499">component</a></p>
+            </div>
+        </cell-index>
+        <cell-index slot="cell-auth-rington">
+            <div>
+                <p><a href="http://localhost:5007">component</a></p>
+            </div>
+        </cell-index>
     </div>
     <div id="info">
         Console
@@ -32,7 +74,7 @@
 </section>
 </body>
 <script type="module" src="/static/html/components/cell-index/cell-index.mjs"></script>
-<!--<script type="module" src="/static/html/components/varan-header/varan-header.mjs"></script>-->
+<script type="module" src="/static/html/components/varan-header/varan-header.mjs"></script>
 
 <script type="module">
 
@@ -40,11 +82,25 @@
 <style>
     :root {
         --width: 30vw;
+        --height: 100%;
+    }
+    header{
+        font-size: 1.5vw;
+    }
+    a{
+        text-decoration: none;
+        color: tomato;
+        font-size: 1.2vw;
+    }
+    p{
+        text-align: center;
+        margin: 1vw;
+        margin-right: 1.2vw;
     }
     div#components{
         display: flex;
         flex-direction: row;
-        height: 50vw;
+        height: var(--height);
         flex-wrap: wrap;
         margin: auto;
         justify-content: space-evenly;
@@ -84,7 +140,6 @@
     input.name, input.address, input.account, input.help, input.runmethod,  input.time,  input.last,input#help,  input#erase{
         align-self: center;
         display: flex;
-        align-self: center;
         box-sizing: border-box;
         padding: 1vw;
         flex-direction: row;
@@ -94,10 +149,12 @@
         margin: auto;
         margin: 1vw;
         outline: none;
-    //height: 5vw;
+        justify-content: space-around;
+        font-size: 3vw;
+        color: steelblue;
     @include fonts(8);
         font-family: Roboto,serif;
-        color: #acb2b5;
+        /*color: #acb2b5;*/
         background: transparent;
     }
     label.name, label.address, label.account, div.container, label.runmethod{
@@ -154,9 +211,9 @@
         justify-content: center;
         align-items: center;
         padding: 2vw;
-        white-space: normal;
         overflow-x: hidden;
         overflow-y: hidden;
+        white-space: pre-wrap;
     }
     div.container{
         width: 100%;
