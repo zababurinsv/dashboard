@@ -1,0 +1,61 @@
+@import "/home/sergey/Desktop/telegram/css/fonts_new.scss";
+@import "/home/sergey/Desktop/telegram/css/util/media_new.scss";
+@import "/home/sergey/Desktop/telegram/css/util/interface";
+
+@mixin size(){
+  width: calc(100vw / 11.2);
+  height: calc(100vw * 0.101);
+}
+section#manager {
+  display: flex;
+  box-sizing: border-box;
+  padding: 5vw;
+  background-color: beige;
+  table#board{
+    @include display(column, nowrap, space-evenly, center, stretch);
+    width: 100%;
+    border-collapse: collapse;
+    tbody{
+      @include display(column, nowrap, space-evenly, center, stretch);
+      width: 100%;
+
+      tr{
+        @include display(row, nowrap, space-between, center, stretch);
+        width: 100%;
+        padding: 0;
+        td {
+          @include size();
+          @include fonts(6);
+          font-family: arial, sans-serif;
+          border: 0.098vw solid black;
+          text-align: center;
+          padding: 0;
+        }
+        td.board-left, td.board-right, td.board-top{
+          @include size();
+          padding: 0;
+          div#chance,div#marvin,div#kentuky{
+            display: flex;
+            img.chance, img.marvin,img.kentuky{
+              width: 100%;
+              height: auto;
+            }
+          }
+        }
+        td.board-center{
+          flex-grow: 1;
+          padding: 0;
+        }
+        td.board-corner{
+          padding: 0;
+          div#jail, div#free{
+            display: flex;
+            img.jail, img.free{
+              width: 100%;
+            }
+          }
+        }
+      }
+    }
+  }
+}

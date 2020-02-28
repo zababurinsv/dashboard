@@ -1,4 +1,3 @@
-import scroll from '/static/html/components/component_modules/scroll/scroll.mjs'
 customElements.define('varan-header',
     class extends HTMLElement {
       static get observedAttributes () {
@@ -710,11 +709,6 @@ customElements.define('varan-header',
                   })
             })
       async function modules (obj) {
-        scroll({
-          input:'varan-header',
-          type:'scroll'
-        },'set','type')
-
         document.addEventListener('authorizationStateReady',async ()=>{
 
           obj['this']['shadowRoot'].querySelector('#head').style.display = 'flex'

@@ -9,7 +9,6 @@ import formidableMiddleware from "express-formidable";
 import {promisify} from "util";
 import dotenv from "dotenv"
 dotenv.config()
-const highWaterMark =  2;
 import whitelist from './whitelist/whitelist.mjs'
 let app = express();
 app.use(compression())
@@ -31,11 +30,12 @@ let corsOptions = {
 }
 
 app.use(formidableMiddleware());
-app.use( express.static('public'));
+
+app.use( express.static('docs'));
 app.use( express.static('static'));
 app.options('/*', cors(corsOptions))
 app.get('/*', async (req, res) => {
-    res.sendFile('/public/index.html', { root: __dirname });
+    res.sendFile('/docs/index.html', { root: __dirname });
 })
 app.use(queue.getErrorMiddleware())
 export default app
