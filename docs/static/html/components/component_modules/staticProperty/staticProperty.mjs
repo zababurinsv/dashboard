@@ -15,9 +15,7 @@ let handler = {
                 case 'length':
                     if(obj.length === 1){
                         let timerId = setTimeout(async function tick() {
-                            console.log('~~~~~input~~~~~~')
                             if(obj.length === 0){
-                                console.log('end~~~~~~~~~~~')
                                 clearTimeout(timerId);
                             }else{
                                 switch (obj[0]['task']['type']) {
@@ -110,8 +108,6 @@ let handler = {
                                     default:
                                         break
                                 }
-                                console.log('all~~~~~~~~~~~',obj, obj.length)
-                                console.log('now~~~~~~~~~~~',obj[0])
                                 obj.shift()
                                 timerId = setTimeout(tick, 10);
                             }
